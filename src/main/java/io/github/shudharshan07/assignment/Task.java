@@ -1,6 +1,7 @@
 package io.github.shudharshan07.assignment;
 
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,15 @@ import java.time.LocalTime;
 
 @Getter
 @Setter
+@Table(name = "task")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     String title;
+
+    @Column(name = "task")
     String task;
     LocalTime created_time;
     LocalTime updated_time;
